@@ -1,0 +1,229 @@
+.archive-content{
+	.bx-wrapper{
+		.bx-viewport{
+			width: 95%!important;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+	}
+	.slide{
+		// height: 600px;
+		.archive-list-item{
+			height: 65%;
+			width: 90%;
+			left: 50%;
+			top: 55px;
+			transform: translate(-50%, 0);
+			background-size: cover;
+			background-position: center center;
+			position: relative;
+			&:hover{
+				.archive-text{
+					background-color: $darkblue;
+				}
+				&::before{
+					width: 85%;
+					height: 85%;
+				}
+				.archive-item-background{
+					background-color: $darkblue;
+					opacity: 0.7;
+				}
+			}
+			.archive-item-background{
+				width: 100%;
+				height: 100%;
+				transition: all 0.3s ease;
+			}
+			&::before{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 80%;
+				height: 80%;
+				z-index: 3;
+				content:"";
+				border: 1px solid #fff;
+				transition: all 0.3s ease;
+			}
+			.archive-text{
+				position: absolute;
+				top: 100%;
+				width: 100%;
+				background-color: $midblue;
+				transition: all 0.3s ease;
+			}
+			.archive-item-title, .archive-item-subtitle{
+				font-family: $futuraMediumStack;
+				font-size: 1.125em;
+				color: #fff;
+				text-transform: uppercase;
+				p{
+					display: inline-block;
+					padding: 10px 0 10px 10px;
+				}
+			}
+			.archive-item-more{
+				font-family: $futuraBoldStack;
+				font-size: 1.5em;
+				color: #fff;
+				p{
+					display: inline-block;
+					padding: 5px 10px;
+				}
+			}
+		}
+	}
+	.bx-wrapper{
+		position: relative;
+	}
+	.bx-pager-item{
+		display: none;
+	}
+	.bx-next, .bx-prev{
+		text-align: center;
+		line-height: 50px;
+		font-size: 24px;
+		position: absolute;
+		top: 50%;
+		transform: translate(0,-50%);
+		display: inline-block;
+		width: 85px;
+		height: 85px;
+		background-color: $midblue;
+		overflow: hidden;
+		text-indent: -999px;
+		transition: all 0.3s ease;
+		&::before{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 25px;
+			height: 5px;
+			border-radius: 5px;
+			background-color: #fff;
+			content: "";
+			transition: all 0.3s ease;
+		}
+		&::after{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -2px;
+			width: 25px;
+			height: 5px;
+			border-radius: 5px;
+			background-color: #fff;
+			content: "";
+			transition: all 0.3s ease;
+		}
+	}
+	.bx-next{
+		right: 0;
+		&:hover{
+			background-color: $darkblue;
+			&::before{
+				left: 60%;
+			}
+			&::after{
+				left: 60%;
+			}
+		}
+		&::before{
+			transform: translate(-50%, -50%) rotate(45deg);
+			transform-origin: right center;
+		}
+		&::after{
+			transform: translate(-50%, -50%) rotate(-45deg);
+			transform-origin: right center;
+		}
+	}
+	.bx-prev{
+		&:hover{
+			background-color: $darkblue;
+			&::before{
+				left: 40%;
+			}
+			&::after{
+				left: 40%;
+			}
+		}
+		&::before{
+			transform: translate(-50%, -50%) rotate(-45deg);
+			transform-origin: left center;
+		}
+		&::after{
+			transform: translate(-50%, -50%) rotate(45deg);
+			transform-origin: left center;
+		}
+	}
+	.disabled{
+		opacity: 0.4;
+	}
+}
+
+.archive-tabs-container{
+	width: 100%;
+	height: 69px;
+	position: absolute;
+	line-height: 70px;
+	font-family: $futuraBoldStack;
+	font-size: 1.5em;
+	color: #fff;
+	.archive-tab{
+		position: relative;
+		width: 20%;
+		margin-right: 10px;
+		height: 100%;
+		text-align: center;
+		cursor: pointer;
+		display: inline-block;
+		background-color: $midblue;
+		border: 1px solid $darkblue;
+		text-transform: uppercase;
+		transition: all 0.3s ease;
+		&:hover{
+			background-color: $darkblue;
+		}
+		&:nth-child(1){
+			margin-left: 2.5%;
+		}
+		&.active-tab{
+			z-index: 4;
+			background-color: #fff;
+			color: $darkblue;
+			border-bottom: 1px solid #fff;
+
+		}
+	}
+}
+
+.multi-archive-wrapper{
+	margin-top: 60px;
+	position: relative;
+	height: 570px;
+	width: 100%;
+	.bx-viewport{
+		border-top: 1px solid $darkblue;
+	}
+}
+
+.multi-archive{
+	position: absolute;
+	top: 70px;
+}
+
+//MEDIA QUERIES
+@media only screen and (max-width: 420px) {
+	.archive-tabs-container{
+		font-size: 1em;
+	}
+}
+@media only screen and (max-width: 660px) {
+	.archive-tabs-container{
+		.archive-tab{
+			width: 30%;
+		}
+	}
+}

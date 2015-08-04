@@ -1,0 +1,168 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: $black;
+    color: $white;
+    text-shadow: none;
+}
+
+::selection {
+    background: $black;
+    color: $white;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid rgba($black, 0.2);
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *  `contenteditable` attribute is included anywhere else in the document.
+ *  Otherwise it causes space to appear at the top and bottom of elements
+ *  that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *  `:before` to contain the top-margins of child elements.
+ */
+.clearfix::before,
+.clearfix::after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/*
+ * FONT SMOOTHING... CSS bloat, but effective
+ *
+ */
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+p, figure {
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+} 
+
+/*
+ * HIDING LINK OUTLINES
+ */
+
+input::-moz-focus-inner { 
+  border: 0; 
+}
+
+object, embed { 
+  outline: 0;
+}
+
+a {
+  outline: 0;
+}
+
+/**
+ * SVG SPRITE
+ */
+.svg-sprite {
+  display: none;
+}
+
+//FONTS
+@font-face {
+  font-family: 'FuturaStd-Bold';
+  src: url('/wp-content/themes/gregfoot/wp-content/themes/gregfoot/fonts/FuturaStd-Bold/FuturaStd-Bold.eot?#iefix') format('embedded-opentype'),  url('/wp-content/themes/gregfoot/fonts/FuturaStd-Bold/FuturaStd-Bold.otf')  format('opentype'),
+       url('/wp-content/themes/gregfoot/fonts/FuturaStd-Bold/FuturaStd-Bold.woff') format('woff'), url('/wp-content/themes/gregfoot/fonts/FuturaStd-Bold/FuturaStd-Bold.ttf')  format('truetype'), url('/wp-content/themes/gregfoot/fonts/FuturaStd-Bold/FuturaStd-Bold.svg#FuturaStd-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaStd-BoldOblique';
+  src: url('/wp-content/themes/gregfoot/fonts/FuturaStd-BoldOblique/FuturaStd-BoldOblique.eot?#iefix') format('embedded-opentype'),  url('/wp-content/themes/gregfoot/fonts/FuturaStd-BoldOblique/FuturaStd-BoldOblique.otf')  format('opentype'),
+       url('/wp-content/themes/gregfoot/fonts/FuturaStd-BoldOblique/FuturaStd-BoldOblique.woff') format('woff'), url('/wp-content/themes/gregfoot/fonts/FuturaStd-BoldOblique/FuturaStd-BoldOblique.ttf')  format('truetype'), url('/wp-content/themes/gregfoot/fonts/FuturaStd-BoldOblique/FuturaStd-BoldOblique.svg#FuturaStd-BoldOblique') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaStd-Medium';
+  src: url('/wp-content/themes/gregfoot/fonts/FuturaStd-Medium/FuturaStd-Medium.eot?#iefix') format('embedded-opentype'),  url('/wp-content/themes/gregfoot/fonts/FuturaStd-Medium/FuturaStd-Medium.otf')  format('opentype'),
+       url('/wp-content/themes/gregfoot/fonts/FuturaStd-Medium/FuturaStd-Medium.woff') format('woff'), url('/wp-content/themes/gregfoot/fonts/FuturaStd-Medium/FuturaStd-Medium.ttf')  format('truetype'), url('/wp-content/themes/gregfoot/fonts/FuturaStd-Medium/FuturaStd-Medium.svg#FuturaStd-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaStd-MediumOblique';
+  src: url('/wp-content/themes/gregfoot/fonts/FuturaStd-MediumOblique/FuturaStd-MediumOblique.eot?#iefix') format('embedded-opentype'),  url('/wp-content/themes/gregfoot/fonts/FuturaStd-MediumOblique/FuturaStd-MediumOblique.otf')  format('opentype'),
+       url('/wp-content/themes/gregfoot/fonts/FuturaStd-MediumOblique/FuturaStd-MediumOblique.woff') format('woff'), url('/wp-content/themes/gregfoot/fonts/FuturaStd-MediumOblique/FuturaStd-MediumOblique.ttf')  format('truetype'), url('/wp-content/themes/gregfoot/fonts/FuturaStd-MediumOblique/FuturaStd-MediumOblique.svg#FuturaStd-MediumOblique') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$futuraBoldStack: 'FuturaStd-Bold', sans-serif;
+$futuraBoldObStack: 'FuturaStd-BoldOblique', sans-serif;
+$futuraMediumStack: 'FuturaStd-Medium', sans-serif;
+$futuraMediumObStack: 'FuturaStd-MediumOblique', sans-serif;

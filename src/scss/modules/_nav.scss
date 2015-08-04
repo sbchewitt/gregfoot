@@ -1,0 +1,252 @@
+//VARIABLES
+$fontstack: 'Source Sans Pro', sans-serif;
+
+.main-wrapper{
+	padding-top: 150px;
+}
+
+.page-nav{
+	width: 100%;
+	height: 150px;
+	z-index: 1000;
+	position: fixed;
+	font-size: 1em;
+	font-family: $futuraMediumStack;
+	background-color: $darkblue;
+	// opacity: 0.8;
+}
+
+.site-name-link{
+	fill: #E8DDCC;
+}
+
+.site-name{
+	height: 150px;
+	line-height: 80px;
+	text-align: center;
+	width: 300px;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	left: 2%;
+	font-size: 24px;
+}
+
+
+.page-links{
+	height: 70px;
+	line-height: 70px;
+	position: absolute;
+	right: 3%;
+	top: 50%;
+	transform: translate(0, -50%);
+	text-transform: uppercase;
+	float: left;
+	padding: 0 10px;
+	.menu{
+			li{
+				display: inline-block;
+				padding: 0 25px 0 0;
+				&:last-child{
+					padding: 0;
+				}
+				svg{
+					opacity: 0;
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					fill: $midblue;
+					transition: all 0.3s ease;
+				}
+				&:hover{
+					a{	
+						border-bottom: 2px solid $midblue;
+					}
+					svg{
+						opacity: 1;
+					}
+				}
+			}
+		}
+	.onstage-link{
+		svg{
+			margin-left: 28px;
+		}
+	}
+	.ontv-link{
+		svg{
+			margin-left: 13px;
+			margin-top: -3px;
+		}
+	}
+	.onyoutube-link{
+		svg{
+			margin-left: 35px;
+		}
+	}
+	a{
+		text-decoration: none;
+		padding-bottom: 5px;
+		transition: all 0.3s ease;
+		color: #E8DDCC;
+		
+	}
+
+}
+
+.links-hamburger{
+	font-size: 2.25em;
+	color: #E8DDCC;
+	display: none;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	right: 3%;
+	transform: translate(0, -50%);
+
+}
+
+.social-links{
+	position: absolute;
+	right: 3%;
+	li{
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		.social-icon-outer{
+			width: 40px;
+			height: 40px;
+			position: relative;
+			overflow: hidden;
+		}
+		.social-icon{
+			width: 100%;
+			height: 100%;
+			transition: all 0.3s ease;
+		}
+		svg {
+			width: 60%;
+			height: 60%;
+			position: absolute;
+			top: 20%;
+			left: 20%;
+			fill: $white;
+		}
+		&:hover{
+			.social-icon{
+				transform: scale(1.3);
+				transform-origin: center center;
+			}
+		}
+	}
+	.twitter div{
+		background-color: #5eaadd;
+	}
+	.instagram div{
+		background-color: #000;
+	}
+	.facebook div{
+		background-color: #3a599d;
+	}
+	.youtube div{
+		background-color: #c5242b;
+	}
+}
+
+.social-mobile{
+	display: none;
+}
+
+//MEDIA QUERIES
+@media only screen and (max-width: 400px) {
+	.site-name{
+		width: 200px;
+		svg{
+			width: 200px;
+		}
+	}
+}
+@media only screen and (max-width: 870px) {
+	.main-wrapper{
+		padding-top: 80px;
+	}
+	.page-nav{
+		height: 80px;
+		background: rgba($darkblue, 1);
+	}
+	.social-links{
+		display: none;
+		width: 100%;
+	}
+	.links-hamburger{
+		display: block;
+	}
+	.page-nav-outer{
+		height: 80px;
+		width: 100%;
+		// background-color: #fff;
+		z-index: 1000;
+		position: fixed;
+		background: rgba($darkblue, 0.8);
+		transition: all 1s ease;
+		&.links-open{
+			height: 100%;
+		}
+	}
+	.page-links{
+		text-align: right;
+		top: 225px;
+		line-height: 50px;
+		// li{
+		// 	display: block;
+		// 	padding: 0;
+			
+		// }
+		.onstage-link{
+			svg{
+				margin: 0;
+				margin-left: -20px;
+				margin-top: 15px;
+			}
+		}
+		.ontv-link{
+			svg{
+				margin: 0;
+				margin-left: -25px;
+				margin-top: 12px;
+			}
+		}
+		.onyoutube-link{
+			svg{
+				margin: 0;
+				margin-left: -25px;
+				margin-top: 15px;
+			}
+		}
+		.menu{
+			margin-top: -1000px;
+			z-index: 50;
+			transition: all 1s ease;
+			li{
+				display: block;
+				padding: 0;
+			}
+			svg{
+				position: relative;
+			}
+			&.links-open{
+				margin-top: -100px;
+			}
+		}
+		.social-mobile{
+			display: block;
+			li{
+				display: inline-block;
+				svg{
+					display: block;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
